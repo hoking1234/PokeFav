@@ -1,0 +1,11 @@
+services:
+  nuxt:
+    build:
+      context: .
+      dockerfile: ./compose/local/nuxt/Dockerfile
+    tmpfs: /tmp
+    ports:
+      - "3000:3000"
+      - "24678:24678"
+    volumes:
+      - ./vue-frontend/:/app
