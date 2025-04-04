@@ -9,6 +9,7 @@ FROM node:${NODE_TAG}
 WORKDIR /app
 COPY ./vue-frontend .
 COPY --from=build /app/node_modules /node_modules
+RUN npm install
 EXPOSE 3000  
 CMD ["npm", "run", "dev"]
 
